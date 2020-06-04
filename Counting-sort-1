@@ -1,0 +1,53 @@
+#https://www.hackerrank.com/contests/target-codevita-4/challenges/countingsort1
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the countingSort function below.
+def countingSort(arr):
+    # Calling of countingSort function with an argument 'arr' a list of elements
+    # initaillization is done in main function
+    
+    #Next Step:  Declare empty dictionary d = { }
+    # Dictioanry has taken, the elements as 'key' and its frequency in 'value' format
+    #mx=max(arr)
+    d={}
+    
+    for i in range(100):
+        d[i]=0
+    # to count the frequency, Traverse the list
+    # one-by-one, all the indexes are traversed ; for loop with temporary variable i 
+    #Next Step:  frequency count
+    for i in arr:
+        #if the element is already listed , and present in dictionary, just increase the value d[i]+=1
+        d[i] += 1
+    
+    # once all the iterations completed, dictionary carry all elements with their seen count
+    lst=[]
+    for i in d.keys() :  
+        lst.append(d[i])
+      
+       
+    return lst
+    
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    n = int(input())
+
+    arr = list(map(int, input().rstrip().split()))
+
+    result = countingSort(arr)
+
+    fptr.write(' '.join(map(str, result)))
+    fptr.write('\n')
+
+    fptr.close()
+
+
+#https://www.hackerrank.com/contests/target-codevita-4/challenges/countingsort1
