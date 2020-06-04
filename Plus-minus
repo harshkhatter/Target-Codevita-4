@@ -1,0 +1,43 @@
+#!/bin/python3
+
+# https://www.hackerrank.com/contests/target-codevita-4/challenges/plus-minus
+
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the plusMinus function below.
+def plusMinus(arr):
+    # Function plusMinus( ) with a single  argument 'arr' list
+    n=len(arr)    
+    # take three temporary variables z,m,p and initialize as 0
+    z=0
+    m=0
+    p=0
+    
+    # Take all the elements from a list one-by-one and check the value
+    for i in arr:
+        if i > 0:       # if element is positive
+            p=p+1       # add 1 to positive, 'p'
+        elif i < 0:     # if element is negative
+            m=m+1       # add 1 to negative, 'm'
+        else:
+            z=z+1       # add 1 to zero, 'z'
+    
+    #show the result in fraction format
+    print(p/n)      # positive by number of elements in list
+    print(m/n)      # negative by number of elements in list
+    print(z/n)      # zero by number of elements in list
+
+if __name__ == '__main__':
+    n = int(input())
+
+    #Take an input 'arr' as a list of elements
+    arr = list(map(int, input().rstrip().split()))
+    
+    # Call a function plusMinus( ) with a single  argument 'arr' list
+    plusMinus(arr)
+
+# https://www.hackerrank.com/contests/target-codevita-4/challenges/plus-minus
